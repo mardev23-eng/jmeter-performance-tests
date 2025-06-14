@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  jmeter-tests:
+    image: justb4/jmeter:5.6.3
+    volumes:
+      - ./test-plans:/tests/test-plans
+      - ./test-data:/tests/test-data
+      - ./results:/tests/results
+      - ./reports:/tests/reports
+      - ./scripts:/tests/scripts
+    working_dir: /tests
+    environment:
+      - BASE_URL=https://marvinmarzon.netlify.app
+      - THREADS=100
+      - RAMP_UP=300
+      - DURATION=1200
+    command: >
+      sh -c "
+        echo 'Starting JMeter Enterprise Performance Tests...' &&
+        jmeter -n -t test-plans/load-test.jmx -l results/load-test-results.jtl -e -o reports/load-test &&
+        echo 'Load test completed successfully!'
+      "
+
+  jmeter-load-test:
+    image: justb4/jmeter:5.6.3
+    volumes:
+      - ./test-plans:/tests/test-plans
+      - ./test-data:/tests/test-data
+      - ./results:/tests/results
+      - ./reports:/tests/reports
+    working_dir: /tests
+    environment:
+      - BASE_URL=https://marvinmarzon.netlify.app
+      - THREADS=100
+      - RAMP_UP=300
+      - DURATION=1200
+    command: >
+      jmeter -n -t test-plans/load-test.jmx 
+      -l results/load-test-results.jtl 
+      -e -o reports/load-test
+      -Jbase.url=${BASE_URL}
+      -Jthreads=${THREADS}
+      -Jramp.up=${RAMP_UP}
+      -Jduration=${DURATION}
+
+  jmeter-stress-test:
+    image: justb4/jmeter:5.6.3
+    volumes:
+      - ./test-plans:/tests/test-plans
+      - ./test-data:/tests/test-data
+      - ./results:/tests/results
+      - ./reports:/tests/reports
+    working_dir: /tests
+    environment:
+      - BASE_URL=https://marvinmarzon.netlify.app
+      - MAX_THREADS=500
+      - RAMP_UP=600
+      - DURATION=1800
+    command: >
+      jmeter -n -t test-plans/stress-test.jmx 
+      -l results/stress-test-results.jtl 
+      -e -o reports/stress-test
+      -Jbase.url=${BASE_URL}
+      -Jmax.threads=${MAX_THREADS}
+      -Jramp.up=${RAMP_UP}
+      -Jduration=${DURATION}
+
+  jmeter-gui:
+    image: justb4/jmeter:5.6.3
+    volumes:
+      - ./test-plans:/tests/test-plans
+      - ./test-data:/tests/test-data
+      - ./results:/tests/results
+      - ./reports:/tests/reports
+    working_dir: /tests
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    command: jmeter
+    network_mode: host
+
+  report-generator:
+    image: python:3.9-slim
+    volumes:
+      - ./results:/app/results
+      - ./reports:/app/reports
+      - ./scripts:/app/scripts
+    working_dir: /app
+    command: >
+      sh -c "
+        pip install --no-cache-dir pandas matplotlib seaborn &&
+        python scripts/generate-consolidated-report.py
+      "
+    depends_on:
+      - jmeter-load-test
+      - jmeter-stress-test
