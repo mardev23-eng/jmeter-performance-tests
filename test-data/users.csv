@@ -1,0 +1,11 @@
+name,email,company,subject,message
+John Doe,john.doe@techcorp.com,TechCorp,Job Opportunity,I am interested in discussing QA opportunities at our company.
+Jane Smith,jane.smith@datasystems.com,DataSystems,Project Inquiry,We need help with test automation for our new project.
+Mike Johnson,mike.johnson@qualityfirst.com,QualityFirst,Consultation,Looking for expert advice on performance testing strategy.
+Sarah Wilson,sarah.wilson@testingpro.com,TestingPro,Collaboration,Interested in collaborating on automation frameworks.
+David Brown,david.brown@automationinc.com,AutomationInc,Job Opportunity,We have an SDET position that might interest you.
+Lisa Garcia,lisa.garcia@qaexperts.com,QA Experts,Project Inquiry,Need assistance with API testing implementation.
+Robert Taylor,robert.taylor@devops.com,DevOps Solutions,Consultation,Seeking guidance on CI/CD testing integration.
+Emily Davis,emily.davis@agiletech.com,AgileTech,Collaboration,Want to discuss best practices in agile testing.
+Michael Chen,michael.chen@cloudtest.com,CloudTest,Job Opportunity,Remote QA position available with competitive package.
+Amanda Rodriguez,amanda.rodriguez@mobilefirst.com,MobileFirst,Project Inquiry,Mobile app testing project requiring expertise.
