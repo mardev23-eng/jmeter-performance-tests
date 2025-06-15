@@ -1,8 +1,5 @@
 # 🚀 JMeter Performance Testing Suite
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![JMeter Version](https://img.shields.io/badge/JMeter-5.6.3-green.svg)](https://jmeter.apache.org/)
-
 > **JMeter performance testing framework for QA & SDET portfolio validation**
 
 Apache JMeter testing suite demonstrating advanced load testing capabilities, comprehensive monitoring, and reporting for [Marvin Marzon's QA & SDET Portfolio](https://marvinmarzon.netlify.app).
