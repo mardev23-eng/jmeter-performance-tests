@@ -1,4 +1,4 @@
-# 🚀 JMeter Professional Performance Testing Suite
+# 🚀 JMeter Performance Testing Suite
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JMeter Version](https://img.shields.io/badge/JMeter-5.6.3-green.svg)](https://jmeter.apache.org/)
@@ -9,7 +9,7 @@ Apache JMeter testing suite demonstrating advanced load testing capabilities, co
 
 ## 🎯 Quick Overview
 
-This repository showcases **professional-level performance engineering expertise** through a comprehensive JMeter testing framework that validates:
+This repository showcases **performance engineering expertise** through a comprehensive JMeter testing framework that validates:
 
 - ✅ **Load Testing** (up to 500 concurrent users)
 - ✅ **Stress Testing** (breaking point analysis)
@@ -71,9 +71,9 @@ docker run --rm -v $(pwd):/tests justb4/jmeter -n -t /tests/test-plans/load-test
 - **Error Rate**: < 1% failed requests
 - **Availability**: > 99.5% uptime during tests
 
-## 📈 Professional Features
+## 📈 Features
 
-### 🔧 **Professional Test Plans**
+### 🔧 **Test Plans**
 - Modular test plan architecture
 - Parameterized test data management
 - Dynamic user simulation patterns
@@ -216,11 +216,11 @@ Status: ✅ PASSED
 
 ## 🤝 Contributing
 
-This framework demonstrates Professional-level QA engineering capabilities. For questions or collaboration opportunities:
+This framework demonstrates QA engineering capabilities. For questions or collaboration opportunities:
 
 **Marvin Marzon** - QA & SDET Professional
 - 📧 **Email**: marvinmarzon@outlook.com
-- 💼 **LinkedIn**: [Marvin Marzon](https://www.linkedin.com/in/marvin-marzon-615400170/)
+- 💼 **LinkedIn**: [Marvin Marzon](https://www.linkedin.com/in/mmarzon/)
 - 🌐 **Portfolio**: [https://marvinmarzon.netlify.app](https://marvinmarzon.netlify.app)
 
 ## 📄 License
@@ -231,12 +231,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**🚀 Professional Performance Testing Excellence with Apache JMeter**
+**🚀 Performance Testing Excellence with Apache JMeter**
 
 *Demonstrating professional QA engineering capabilities through comprehensive performance validation*
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge)](https://marvinmarzon.netlify.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/marvin-marzon-615400170/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mmarzon/)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:marvinmarzon@outlook.com)
 
 </div>
